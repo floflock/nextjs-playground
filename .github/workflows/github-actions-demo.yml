@@ -16,4 +16,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: yarn lint
+      - name: Install node modules
+        run: yarn install
+      - name: Linting typescript
+        run: yarn lint
