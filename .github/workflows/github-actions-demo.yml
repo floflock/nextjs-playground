@@ -22,5 +22,23 @@ jobs:
       - run: ls -all node_modules/
       - name: Linting typescript
         run: yarn lint
-      - name: Eslint
-        run: eslint .
+  Now-We-Deploy:
+    runs-on: ubuntu-latest
+    steps:
+        - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+        - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+        - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+        - name: Check out repository code
+          uses: actions/checkout@v3
+        - name: Setup node
+          uses: actions/setup-node@v3
+          with:
+            node-version: 16
+            cache: yarn
+        - run: ls -all
+        - name: Install node modules
+          run: yarn install
+        - run: ls -all
+        - run: ls -all node_modules/
+        - name: Linting typescript
+          run: yarn lint
