@@ -13,12 +13,12 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-            node-version: 16.13.x
+            node-version: 16
             cache: yarn
       - run: ls -all
       - name: Install node modules
         run: yarn install
-      - name: Install node modules
-        run: yarn install
+      - run: ls -all
+      - run: ls -all node_modules/
       - name: Linting typescript
         run: yarn lint
