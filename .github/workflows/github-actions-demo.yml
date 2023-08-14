@@ -22,3 +22,5 @@ jobs:
       - run: ls -all node_modules/
       - name: Linting typescript
         run: yarn lint
+      - name: Eslint
+        run: eslint .
